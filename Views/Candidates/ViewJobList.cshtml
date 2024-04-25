@@ -1,0 +1,56 @@
+﻿@model IEnumerable<JobWebsite.Models.Job>
+
+@{
+    ViewData["Title"] = "Job List";
+}
+
+<h1>Availble Jobs</h1>
+
+<form asp-controller="Candidates" asp-action="ViewJobList">
+    <p>
+        <input type="text" name="keyword" value="@ViewBag.Keyword" placeholder="Search jobs" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    <a asp-controller="Candidates" asp-action="CreateCV" asp-route-id="@item.Id">Apply</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

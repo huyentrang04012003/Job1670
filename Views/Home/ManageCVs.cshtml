@@ -1,0 +1,29 @@
+﻿@model IEnumerable<JobWebsite.Models.CV>
+
+@{
+    ViewData["Title"] = "ManageCVs";
+    var cvCount = 0;
+}
+
+<h1>CV List</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>No.</th>
+            <th>CV</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@(++cvCount)</td>
+                <td>
+                    <a asp-action="ViewCVDetails" asp-route-id="@item.Id">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

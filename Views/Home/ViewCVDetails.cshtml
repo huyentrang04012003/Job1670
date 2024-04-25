@@ -1,0 +1,86 @@
+﻿@model JobWebsite.Models.CV
+
+@{
+    ViewData["Title"] = "CV Details";
+}
+
+<h1>CV Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <h3>Candidate Info:</h3>
+        <dt class="col-sm-2">
+            Name
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model!.Candidate!.Name)
+        </dd>
+        <dt class="col-sm-2">
+            Avatar
+        </dt>
+        <dd class="col-sm-10">
+            <img src="/images/@Model.Candidate!.Avatar" />
+        </dd>
+        <dt class="col-sm-2">
+            Address
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model!.Candidate!.Address)
+        </dd>
+        <dt class="col-sm-2">
+            Email
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model!.Candidate!.Email)
+        </dd>
+        <dt class="col-sm-2">
+            Phone
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model!.Candidate!.Phone)
+        </dd>
+        <dt class="col-sm-2">
+            DateOfBirth
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model!.Candidate!.DateOfBirth)
+        </dd>
+        <dt class="col-sm-2">
+            Description
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model!.Candidate!.Description)
+        </dd>
+        <h3>Job Applied:</h3>
+        <dt class="col-sm-2">
+            Title
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model!.Job!.Title)
+        </dd>
+        <dt class="col-sm-2">
+            Salary
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model!.Job!.Salary)
+        </dd>
+        <dt class="col-sm-2">
+            Location
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model!.Job!.Location)
+        </dd>
+        <dt class="col-sm-2">
+            Description
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model!.Job!.Description)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    @*  <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> | *@
+    <a asp-action="Index">Back to List</a>
+</div>
